@@ -281,12 +281,30 @@ body {
   box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
 }
 
+/* MOBILE */
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #453a3d;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
 /**************************/
 /* SECTION 1: HERO */
 /**************************/
 
 .section-hero {
-  height: 100vh;
   background-image: url(../img/hero-background.jpg);
   background-size: cover;
   background-position: center;
@@ -372,7 +390,7 @@ body {
 
 .benefits-list {
   font-size: 3rem;
-  margin-bottom: 4.8rem;
+  margin-bottom: 6.4rem;
 }
 
 .benefits-text-container ul li {
@@ -425,13 +443,8 @@ body {
 }
 
 .controller {
-  display: flex;
-  justify-content: space-between;
-}
-
-#controls i {
-  color: white;
-  font-size: 1rem;
+  text-align: right;
+  margin-bottom: 2.4rem;
 }
 
 .previous,
@@ -629,7 +642,7 @@ body {
 
 .cta-subheader {
   font-size: 2rem;
-  margin-bottom: 3.2rem;
+  margin-bottom: 4.8rem;
 }
 
 /**************************/

@@ -54,6 +54,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script defer src="js/script.js"></script>
   </head>
+
   <body class="sticky">
     <!-- HEADER -->
     <header class="header">
@@ -78,12 +79,17 @@
           <li><a href="#cta" class="main-nav-link">Únete ahora</a></li>
         </ul>
       </nav>
+
+      <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
     </header>
 
     <!-- BODY -->
     <main>
       <!-- HERO -->
-      <section id="home" class="section section-hero">
+      <section id="home" class="section-hero">
         <div class="container-wide">
           <div class="hero">
             <div class="hero-text">
@@ -135,11 +141,11 @@
               ¿Hace uso excesivo de tratamientos y productos para dañar tu
               cabello? ¿Y ahora está dañado, delgado y roto?
             </p>
-            <p>
+            <!-- <p>
               ¿Es el cuidado del cabello algo en lo que no se ha enfocado, pero
               le gustaría aprender a mantener un cabello más saludable y
               hermoso?
-            </p>
+            </p> -->
           </div>
           <div class="grid grid-about">
             <picture>
@@ -375,29 +381,27 @@
 
       <!-- TESTIMONIALS & RESULTS -->
       <section class="section">
+        <div class="container">
+          <h2 class="heading-secondary">
+            Transformaciones reales con Agua de Cielo
+          </h2>
+        </div>
         <div id="slider">
           <div class="container">
             <div class="slider-wrapper">
-              <div class="controller">
-                <div>
-                  <h2 class="heading-secondary">
-                    Transformaciones reales con Agua de Cielo
-                  </h2>
-                </div>
-                <div id="controls">
-                  <button class="previous">
-                    <ion-icon
-                      class="slider-btn"
-                      name="chevron-back-outline"
-                    ></ion-icon>
-                  </button>
-                  <button class="next">
-                    <ion-icon
-                      class="slider-btn"
-                      name="chevron-forward-outline"
-                    ></ion-icon>
-                  </button>
-                </div>
+              <div class="controller" id="controls">
+                <button class="previous">
+                  <ion-icon
+                    class="slider-btn"
+                    name="chevron-back-outline"
+                  ></ion-icon>
+                </button>
+                <button class="next">
+                  <ion-icon
+                    class="slider-btn"
+                    name="chevron-forward-outline"
+                  ></ion-icon>
+                </button>
               </div>
               <div class="my-slider">
                 <div class="slide">
