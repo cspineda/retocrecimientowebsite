@@ -747,3 +747,53 @@ body {
 .policy:active {
   color: #fff;
 }
+
+/**************************/
+/* PRIVACY */
+/**************************/
+
+.section-privacy {
+  margin: 12.8rem 9.6rem;
+}
+
+.policy-container p {
+  font-size: 1.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.policy-container h2 {
+  margin-top: 4.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.policy-container ul {
+  margin-left: 4.8rem;
+  font-size: 1.6rem;
+}
+
+/**************************/
+/* SUCCESS */
+/**************************/
+
+.section-success {
+}
+
+.success-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  overflow: visible;
+}
+
+.success-text {
+  margin: 9.6rem 4.8rem;
+}
+
+.success-img-container {
+  background: url(../img/success-banner.webp);
+  background-size: cover;
+}
+
+.success-img {
+  width: 100%;
+}

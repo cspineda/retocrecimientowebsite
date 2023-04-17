@@ -115,6 +115,10 @@ Instead, 1rem = 1em = 16px
   .logo-footer {
     width: 85%;
   }
+
+  .success-container {
+    grid-template-columns: 1fr 1.5fr;
+  }
 }
 
 /* BELOW 944 pixels (Tablets) */
@@ -213,6 +217,14 @@ Instead, 1rem = 1em = 16px
   .main-nav-link:link,
   .main-nav-link:visited {
     font-size: 3rem;
+  }
+
+  .success-container {
+    grid-template-columns: 1fr;
+  }
+
+  .success-text {
+    margin: 12.8rem 4.8rem 4.8rem 4.8rem;
   }
 }
 
@@ -379,6 +391,10 @@ Instead, 1rem = 1em = 16px
   .accordion-content {
     font-size: 1.8rem;
   }
+
+  .section-privacy {
+    margin: 12.8rem 2.4rem;
+  }
 }
 
 /* BELOW 544 pixels (Phones) */
@@ -512,5 +528,30 @@ Instead, 1rem = 1em = 16px
 
   .policies {
     text-align: center;
+  }
+
+  .success-container {
+    align-items: center;
+    margin-top: 9.6rem;
+  }
+
+  .success-text {
+    align-self: center;
+    margin-bottom: 12.8rem;
+  }
+
+  .success-text .heading-primary {
+    font-size: 5.2rem;
+  }
+
+  .success-text .cta-subheader {
+    font-size: 3rem;
+  }
+
+  .success-text .btn,
+  .success-text .btn:link,
+  .success-text .btn:visited {
+    font-size: 3rem;
+    padding: 1.6rem 2.4rem;
   }
 }
