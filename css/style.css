@@ -551,6 +551,24 @@ body {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+input[type="checkbox"] {
+  width: 2%;
+  padding: 0;
+  transform: scale(2);
+  margin-left: 1.2rem;
+  grid-column: 1 / -1;
+}
+
+button[type="submit"] {
+  grid-row: 6;
+  grid-column: 1 / -1;
+}
+
+.checkbox-label {
+  margin-left: 1.2rem;
+  grid-column: 1 / -1;
+}
+
 .cta-form input::placeholder,
 .cta-form textarea::placeholder {
   color: #aaa;
