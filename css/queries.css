@@ -232,7 +232,7 @@ Instead, 1rem = 1em = 16px
   }
 
   button[type="submit"] {
-    grid-row: 9;
+    grid-row: 7;
   }
 }
 
