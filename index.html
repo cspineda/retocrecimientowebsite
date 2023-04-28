@@ -589,12 +589,12 @@
                 />
               </div>
               <div>
-                <label for="phone">Correo electrónico</label>
+                <label for="phone">Numero de télefono</label>
                 <input
                   id="phone"
                   type="tel"
                   name="Phone"
-                  placeholder="(809) 123-4567"
+                  placeholder="+1 (809) 123-4567"
                   required
                 />
               </div>
@@ -870,11 +870,4 @@
       </div>
     </footer>
   </body>
-  <script>
-    const phoneInputField = document.querySelector("#phone");
-    const phoneInput = window.intlTelInput(phoneInputField, {
-      utilsScript:
-        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-  </script>
 </html>
