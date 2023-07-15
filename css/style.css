@@ -481,7 +481,22 @@ body {
 }
 
 /**************************/
-/* SECTION 5: HOW IT WORKS & CTA */
+/* SECTION 5: Requirements */
+/**************************/
+
+.requirements-container {
+  text-align: center;
+  justify-content: center;
+}
+
+.requirements-icon {
+  width: 20rem;
+  border-radius: 50%;
+  margin-bottom: 2.4rem;
+}
+
+/**************************/
+/* SECTION 6: HOW IT WORKS & CTA */
 /**************************/
 
 .instructions-container {
@@ -587,8 +602,40 @@ button[type="submit"] {
   font-size: 1.6rem;
 }
 
+.section-whatsapp {
+  margin-top: 4.8rem;
+  text-align: center;
+}
+
+.whatsapp-container {
+  text-align: center;
+  display: block;
+  padding: 3.2rem;
+}
+
+.whatsapp-icon-link:link,
+.whatsapp-icon-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #6ec1ea;
+  font-weight: 500;
+  font-size: 1.4rem;
+  transition: all 0.3s;
+  margin-bottom: 3.2rem;
+}
+
+.whatsapp-icon-link:hover,
+.whatsapp-icon-link:active {
+  color: #1a67af;
+}
+
+.whatsapp-icon {
+  height: 20rem;
+  width: 20rem;
+}
+
 /**************************/
-/* SECTION 6: FAQ */
+/* SECTION 7: FAQ */
 /**************************/
 
 .accordion {
@@ -635,7 +682,7 @@ button[type="submit"] {
 }
 
 /**************************/
-/* SECTION 7: AGUA DE CIELO */
+/* SECTION 8: AGUA DE CIELO */
 /**************************/
 
 .sales-page {
@@ -655,7 +702,7 @@ button[type="submit"] {
 }
 
 /**************************/
-/* SECTION 8: LAST CHANCE CTA */
+/* SECTION 9: LAST CHANCE CTA */
 /**************************/
 
 .cta-subheader {
