@@ -18,11 +18,11 @@ Mission Text: 1.4
 Paragraph default: 1.8
 
 --- 02 COLORS
-- Primary: #F3DBCF
-- Secondary: #E5C1CD, 
+- Primary: #F3DBCF #D7ECF6
+- Secondary: #F2A2BE, 
 - Tints: #F9EDE7 #f5e6eb
 - Shades: #453a3d
-- Accents: #C56483
+- Accents: #B3003F
 - Greys: 
 #343a40
 #555
@@ -160,8 +160,8 @@ body {
   padding: 1.6rem 2.4rem;
   text-decoration: none;
   text-align: center;
-  background-color: #c56483;
-  color: #f9f0f3;
+  background-color: #b3003f;
+  color: #f7e6ec;
 
   /* only necessary for .btn */
   border: none;
@@ -179,11 +179,11 @@ body {
 }
 
 .section--brown {
-  background-color: #f9ede7;
+  background-color: #d7ecf6;
 }
 
 .section--pink {
-  background-color: #f5e6eb;
+  background-color: #d7ecf6;
 }
 
 .container-center {
@@ -200,7 +200,7 @@ body {
 
 .header {
   display: flex;
-  background-color: #e5c1cd;
+  background-color: #f2a2be;
   justify-content: space-between;
   align-items: center;
 
@@ -305,7 +305,7 @@ body {
 /**************************/
 
 .section-hero {
-  background-image: url(../img/hero-background.jpg);
+  /* background-image: url(../img/hero-background.jpg); */
   background-size: cover;
   background-position: center;
 }
@@ -457,7 +457,7 @@ body {
   border-radius: 50%;
   outline: none;
   transition: 0.7s ease-in-out;
-  border: 3px solid #e5c1cd;
+  border: 3px solid #f2a2be;
   box-shadow: 0 0 5px #bbb;
 }
 
@@ -508,7 +508,7 @@ body {
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
   border-radius: 11px;
 
-  background-image: linear-gradient(to right bottom, #efdae1, #e5c1cd);
+  background-image: linear-gradient(to right bottom, #efdae1, #f2a2be);
   overflow: hidden;
   color: #0c1c36;
   padding: 4.8rem 6.4rem;
