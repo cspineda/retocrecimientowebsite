@@ -633,7 +633,7 @@ Recibirás una consulta gratuita para ver qué productos funcionan mejor para tu
                 <select id="countryCode" name="Country code" required>
                   <option disabled selected value>Por favor elige un país</option>
 
-                  <option data-countryCode="US" data-countryName="USA" value="'+1">USA (+1)</option>
+                  <option data-countryCode="US" data-countryName="United States" value="'+1">USA (+1)</option>
                   <option data-countryCode="DO" data-countryName="Dominican Republic" value="'+1">Dominican Republic (+1)</option>
 
                   <optgroup label="Otros países">
@@ -954,7 +954,7 @@ Recibirás una consulta gratuita para ver qué productos funcionan mejor para tu
                 phoneFullInput.value = cc + local;
 
                 const opt = countrySelect.options[countrySelect.selectedIndex];
-                hiddenCountryInput.value = opt ? (opt.getAttribute('data-countryCode') || '') : '';
+                hiddenCountryInput.value = opt ? (opt.getAttribute('data-countryName') || '') : '';
               }
 
               // Keep hidden fields in sync
