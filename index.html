@@ -634,7 +634,7 @@ Recibirás una consulta gratuita para ver qué productos funcionan mejor para tu
                   <!-- <option value=""></option> -->
                   <option disabled selected value>Por favor elige un país</option>
                   <option data-countryCode="United States" value="'+1">USA (+1)</option>
-                  <option data-countryCode="DO" value="+1">Dominican Republic (+1)</option>
+                  <option data-countryCode="DO" value="'+1">Dominican Republic (+1)</option>
                   <optgroup label="Otros países">
                     <option data-countryCode="DZ" value="+213">Algeria (+213)</option>
                     <option data-countryCode="AD" value="+376">Andorra (+376)</option>
@@ -934,33 +934,45 @@ Recibirás una consulta gratuita para ver qué productos funcionan mejor para tu
             </p>
           </div>
           <script>
-            const countrySelect = document.getElementById('countryCode');
-            const hiddenCountryInput = document.getElementById('countryName');
+            // const countrySelect = document.getElementById('countryCode');
+            // const hiddenCountryInput = document.getElementById('countryName');
 
+            // countrySelect.addEventListener('change', function () {
+            //   // Copy the data-countryCode attribute into the hidden input
+            //   const selectedOption = this.options[this.selectedIndex];
+            //   hiddenCountryInput.value = selectedOption.getAttribute('data-countryCode');
+            // });
+
+          document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form[name="contactForm"]');
+            const countrySelect = document.getElementById('countryCode');
             const phoneInput = document.getElementById('phone');
             const phoneFullInput = document.getElementById('phoneFull');
-            const form = document.querySelector('.cta-form');
+            const hiddenCountryInput = document.getElementById('countryName');
 
-            countrySelect.addEventListener('change', function () {
-              // Copy the data-countryCode attribute into the hidden input
-              const selectedOption = this.options[this.selectedIndex];
-              hiddenCountryInput.value = selectedOption.getAttribute('data-countryCode');
-            });
-
-            function updatePhoneFull() {
-              const countryCode = countrySelect.value || '';
-              const phone = phoneInput.value.trim();
-              phoneFullInput.value = countryCode + phone;
+            function sanitizePhone(p) {
+              // keep digits only from the local number field
+              return (p || '').replace(/[^\d]/g, '');
             }
 
-            // Update hidden input whenever values change
-            countrySelect.addEventListener('change', updatePhoneFull);
-            phoneInput.addEventListener('input', updatePhoneFull);
+            function updateHiddenFields() {
+              const cc = (countrySelect.value || '').trim(); // e.g. "+1"
+              const local = sanitizePhone(phoneInput.value); // e.g. "8091234567"
+              phoneFullInput.value = cc + local;
+
+              const opt = countrySelect.options[countrySelect.selectedIndex];
+              hiddenCountryInput.value = opt ? (opt.getAttribute('data-country') || '') : '';
+            }
+
+            // Keep hidden fields in sync
+            countrySelect.addEventListener('change', updateHiddenFields);
+            phoneInput.addEventListener('input', updateHiddenFields);
 
             // Ensure latest value before submit
-            form.addEventListener('submit', updatePhoneFull);
-          </script>
+            form.addEventListener('submit', updateHiddenFields);
+          });
 
+          </script>
 
 
           <!-- WHATSAPP -->
