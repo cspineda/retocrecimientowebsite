@@ -866,6 +866,10 @@ Recibirás una consulta gratuita para ver qué productos funcionan mejor para tu
                   required
                 />
               </div>
+
+              <!-- Hidden field that combines country code + phone -->
+               <input type="hidden" id="phoneFull" name="Phone full" />
+
               <div>
                 <label for="email">Correo electrónico</label>
                 <input
@@ -933,11 +937,28 @@ Recibirás una consulta gratuita para ver qué productos funcionan mejor para tu
             const countrySelect = document.getElementById('countryCode');
             const hiddenCountryInput = document.getElementById('countryName');
 
+            const phoneInput = document.getElementById('phone');
+            const phoneFullInput = document.getElementById('phoneFull');
+            const form = document.querySelector('.cta-form');
+
             countrySelect.addEventListener('change', function () {
               // Copy the data-countryCode attribute into the hidden input
               const selectedOption = this.options[this.selectedIndex];
               hiddenCountryInput.value = selectedOption.getAttribute('data-countryCode');
             });
+
+            function updatePhoneFull() {
+              const countryCode = countrySelect.value || '';
+              const phone = phoneInput.value.trim();
+              phoneFullInput.value = countryCode + phone;
+            }
+
+            // Update hidden input whenever values change
+            countrySelect.addEventListener('change', updatePhoneFull);
+            phoneInput.addEventListener('input', updatePhoneFull);
+
+            // Ensure latest value before submit
+            form.addEventListener('submit', updatePhoneFull);
           </script>
 
 
