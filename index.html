@@ -852,6 +852,10 @@ Recibirás una consulta gratuita para ver qué productos funcionan mejor para tu
                   </optgroup>
                 </select>
               </div>
+
+              <!-- Hidden field that will store the actual country -->
+              <input type="hidden" id="countryName" name="Country" />
+
               <div>
                 <label for="phone">Numero de télefono (Sin código de país)</label>
                 <input
@@ -925,6 +929,19 @@ Recibirás una consulta gratuita para ver qué productos funcionan mejor para tu
               hello@aguadecielobeauty.com
             </p>
           </div>
+          <script>
+            const countrySelect = document.getElementById('countryCode');
+            const hiddenCountryInput = document.getElementById('countryName');
+
+            countrySelect.addEventListener('change', function () {
+              // Copy the data-countryCode attribute into the hidden input
+              const selectedOption = this.options[this.selectedIndex];
+              hiddenCountryInput.value = selectedOption.getAttribute('data-countryCode');
+            });
+          </script>
+
+
+
           <!-- WHATSAPP -->
           <div class="section-whatsapp">
             <h3 class="heading-tertiary">¿Tienes preguntas?</h3>
