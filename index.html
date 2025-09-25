@@ -961,7 +961,7 @@ Recibirás una consulta gratuita para ver qué productos funcionan mejor para tu
               phoneFullInput.value = cc + local;
 
               const opt = countrySelect.options[countrySelect.selectedIndex];
-              hiddenCountryInput.value = opt ? (opt.getAttribute('data-country') || '') : '';
+              hiddenCountryInput.value = opt ? (opt.getAttribute('data-countryCode') || '') : '';
             }
 
             // Keep hidden fields in sync
