@@ -2240,36 +2240,43 @@
                 return (p || "").replace(/[^\d]/g, "");
               }
 
-              // 🕒 create timestamp in format "9/25/2025 5:51:00" (New York time)
+              // 🕒 ISO 8601 in New York, e.g. "2025-10-05T14:23:09-04:00"
               function nyNow() {
                 try {
-                  const fmt = new Intl.DateTimeFormat("en-US", {
+                  const fmt = new Intl.DateTimeFormat("en-CA", {
                     timeZone: "America/New_York",
                     year: "numeric",
-                    month: "numeric",
-                    day: "numeric",
-                    hour: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                    hour: "2-digit",
                     minute: "2-digit",
                     second: "2-digit",
                     hour12: false,
+                    timeZoneName: "shortOffset", // yields "GMT-4" or "GMT-5"
                   });
-                  return fmt.format(new Date()).replace(",", "");
-                } catch (e) {
-                  const d = new Date();
-                  return (
-                    d.getMonth() +
-                    1 +
-                    "/" +
-                    d.getDate() +
-                    "/" +
-                    d.getFullYear() +
-                    " " +
-                    d.getHours() +
-                    ":" +
-                    String(d.getMinutes()).padStart(2, "0") +
-                    ":" +
-                    String(d.getSeconds()).padStart(2, "0")
+                  const parts = Object.fromEntries(
+                    fmt.formatToParts(new Date()).map((p) => [p.type, p.value])
                   );
+
+                  // Parse "GMT-4" -> "-04:00"
+                  const m = (parts.timeZoneName || "").match(
+                    /GMT([+-]\d{1,2})(?::(\d{2}))?/
+                  );
+                  let offset = "Z";
+                  if (m) {
+                    const sign = m[1].startsWith("-") ? "-" : "+";
+                    const hours = String(Math.abs(parseInt(m[1], 10))).padStart(
+                      2,
+                      "0"
+                    );
+                    const mins = (m[2] || "00").padStart(2, "0");
+                    offset = `${sign}${hours}:${mins}`;
+                  }
+
+                  return `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}:${parts.second}${offset}`;
+                } catch (e) {
+                  // Fallback to UTC ISO 8601
+                  return new Date().toISOString();
                 }
               }
 
@@ -2298,7 +2305,7 @@
               form.addEventListener("submit", function () {
                 setTimeout(function () {
                   window.location.href = "https://retocrecimiento.com/success";
-                }, 800); // delay in ms (adjust if needed)
+                }, 1000); // delay in ms (adjust if needed)
               });
 
               // Initialize once on load
